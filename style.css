@@ -1,0 +1,105 @@
+html, body, div, span, h1, h2, h3, h4, h5, h6, p, img, ol, ul, li, fieldset,
+form, label, article, aside, figure, figcaption, footer, header, section {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+body {
+  line-height: 1;
+  color: #3d3935;
+  font-family: Arial, Helvetica, sans-serif;
+  margin: 20px 0 0 20px;
+}
+
+ol, ul {
+  list-style: none;
+}
+
+h1 {
+  display: block;
+  font-family: Impact,sans-serif;
+  font-size: 90px;
+  font-weight: 500;
+  color: #e6a65d;
+}
+
+.quote {
+  display: block;
+  width: 1000px;
+  padding: 20px;
+  font-size: 18px;
+  line-height: 24px;
+  background-color: rgb(226, 226, 226);
+  margin-top: 20px;
+}
+
+.quote-name {
+  margin-top: 10px;
+  font-weight: 700;
+}
+
+.quote-title {
+  font-style: italic;
+}
+
+.select-labels {
+  display: flex;
+}
+
+label {
+  font-size: 18px;
+  font-weight: 600;
+  margin: 20px 315px 20px 3px;
+}
+
+select {
+  width: 500px;
+  padding: 10px;
+  border-radius: 5px;
+  font-size: 18px;
+  margin-right: 20px;
+}
+
+#hidden {
+  display: none;
+  visibility: hidden;
+}
+
+#output-container {
+  display: flex;
+}
+
+h2 {
+  margin-top: 30px;
+  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  color: #e6a65d;
+  font-size: 28px;
+}
+
+ul {
+  width: 525px;
+  margin-top: 30px;
+}
+
+li {
+  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  font-size: 24px;
+  line-height: 36px;
+  color: #a7a8a9;
+}
+
+.nomnom-output li:nth-child(1) {
+  color: #fe5000;
+}
+
+.nomnom-output li:nth-child(2) {
+  color: #e782a9;
+}
+
+.nomnom-output li:nth-child(3) {
+  color: #e1cd00;
+}

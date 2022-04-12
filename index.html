@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Nom Nom Challenge</title>
+  <link rel="stylesheet" href="./style.css">
+</head>
+
+<script>
+  function getOption() {
+    let otherSelected = document.querySelector('#other-selection').value || -1;
+    let nomnomSelected = document.querySelector("#nomnom-selection").value;
+    displayOption(otherSelected, nomnomSelected);
+  }
+
+  function displayOption(a, b) {
+    let otherRecipes = {
+      1: { title: "Blue Buffalo ® Wilderness ™ Chicken", prot: 99, fat: 44, carb: 79 },
+      2: { title: "Earthborn Holistic ® Adult Vantage", prot: 67, fat: 37, carb: 129 },
+      3: { title: "Hill's ® Chicken & Brown Rice", prot: 54, fat: 40, carb: 135 }
+    }
+    let nomnomRecipes = {1:{title: "Beef Mash", prot: 77, fat: 40, carb: 111 },
+      2: {title: "Chicken Cuisine", prot: 80, fat: 56, carb: 71},
+      3: {title: "Turkey Fare", prot: 78, fat: 41, carb: 109 },
+      4: {title: "Pork Potluck", prot: 76, fat: 48, carb: 93}
+    }
+    if (!a) {
+      return null;
+    } else {
+      let otherTitle = document.getElementById("other-title");
+      otherTitle.innerText = otherRecipes[a].title;
+      let nomnomTitle = document.getElementById("nomnom-title");
+      nomnomTitle.innerText = nomnomRecipes[b].title;
+
+      let otherProt = document.getElementById("other-prot");
+      otherProt.innerText = `Protein: ${otherRecipes[a].prot}`;
+      let otherFat = document.getElementById("other-fat");
+      otherFat.innerText = `Fat: ${otherRecipes[a].fat}`;
+      let otherCarb = document.getElementById("other-carb");
+      otherCarb.innerText = `Carbohydrate: ${otherRecipes[a].carb}`;
+
+      let nomnomProt = document.getElementById("nomnom-prot");
+      nomnomProt.innerText = `Protein *: ${nomnomRecipes[b].prot}`;
+      let nomnomFat = document.getElementById("nomnom-fat");
+      nomnomFat.innerText = `Fat: ${nomnomRecipes[b].fat}`;
+      let nomnomCarb = document.getElementById("nomnom-carb");
+      nomnomCarb.innerText = `Carbohydrate: ${nomnomRecipes[b].carb}`;
+    } 
+  }
+</script>
+
+<body>
+  <h1>COMPARISON CALCULATOR</h1>
+    <div class="quote">
+      <p>Percentages on commercial pet food labels are not reliable because they are based on weight, not calories, and the
+      values are affected by many factors, including moisture, fiber and minerals. Use this calculator to get a more accurate
+      picture of how another pet food brand compares with Nom Nom.</p>
+      <h5 class="quote-name">Dr. Caitlyn Getty</h5>
+      <h5 class="quote-title">Scientific Affairs Veterinarian</h5>
+    </div>
+    <div class="select-labels">
+      <label>Name of dog food brand</label>
+      <label>Compare with Nom Nom</label>
+    </div>
+    <select id="other-selection" onchange={getOption()}>
+      <option value="" selected disabled>Select Pet Food Brand</option>
+      <option value="1">Blue Buffalo ® Wilderness ™ Chicken</option>
+      <option value="2">Earthborn Holistic ® Adult Vantage</option>
+      <option value="3">Hill's ® Chicken & Brown Rice</option>
+    </select>
+    <select id="nomnom-selection" onchange={getOption()}>
+      <option value="1" selected>Beef Mash</option>
+      <option value="2">Chicken Cuisine</option>
+      <option value="3">Turkey Fare</option>
+      <option value="4">Pork Potluck</option>
+    </select>
+    
+    <div id="output-container">
+      <div>
+        <h2 id="other-title"></h2>
+        <ul>
+          <li id="other-prot"></li>
+          <li id="other-fat"></li>
+          <li id="other-carb"></li>
+        </ul>
+      </div>
+      <div class="nomnom-output">
+        <h2 id="nomnom-title"></h2>
+        <ul>
+          <li id="nomnom-prot"></li>
+          <li id="nomnom-fat"></li>
+          <li id="nomnom-carb"></li>
+        </ul>
+      </div>
+    </div>
+
+</body>
+</html>
